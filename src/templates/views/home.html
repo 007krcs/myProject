@@ -1,0 +1,26 @@
+<body>
+  <form name="myForm" action="index.html" ng-submit="submit()" novalidate>
+
+      <div class="container">
+        <h1>Application Form</h1>
+        <span class="col-sm-2">First Name:</span> <input class="col-sm-4" type="text" name="firstName" ng-model="firstName" placeholder="First Name" required>
+        <span style="color:Red" ng-show="myForm.firstName.$error.required"> Required! </span>
+        <br><br>
+        <span class="col-sm-2">Last Name:</span> <input class="col-sm-4" type="text" name="lastName" ng-model="lastName" placeholder="Last Name" required>
+        <span style="color:Red" ng-show="myForm.lastName.$error.required"> Required! </span>
+        <br><br>
+        <span class="col-sm-2">Email:</span> <input class="col-sm-4" name="email" type="email" ng-model="email" placeholder="Email" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" required>
+        <span style="color:Red" ng-show="myForm.email.$error.required"> Required! </span>
+        <span style="color:Red" ng-show="myForm.email.$dirty&&myForm.email.$error.pattern">Please Enter Valid Email</span>
+        <br><br>
+        <span class="col-sm-2">Password:</span> <input class="col-sm-4" type="password" name="password" ng-model="password"  placeholder="Password" required>
+        <span style="color:Red" ng-show="myForm.password.$error.required"> Required! </span>
+        <span style="color:Red" ng-show="myForm.password.$dirty">Please enter atleast 6 digit password which contain capital small alphabetical and number</span>
+        <br><br>
+
+      <div class="btn-group">
+          <button type="submit"  class="btn btn-success">Sign In</button>
+      </div>
+      </div>
+  </form>
+</body>
